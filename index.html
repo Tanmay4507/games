@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Pro - Ultimate Gaming Experience</title>
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --accent: #ffe66d;
+            --dark: #292f36;
+            --light: #f7fff7;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 var(--accent);
+        }
+        
+        .tagline {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .game-modes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .mode-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 200px;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .mode-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mode-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .mode-card p {
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+        
+        .mode-card.player-vs-player {
+            border-top: 5px solid var(--primary);
+        }
+        
+        .mode-card.player-vs-ai {
+            border-top: 5px solid var(--secondary);
+        }
+        
+        .mode-card.online-multiplayer {
+            border-top: 5px solid var(--accent);
+        }
+        
+        .play-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .play-button:hover {
+            background-color: var(--secondary);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+        
+        .feature h3 {
+            color: var(--secondary);
+        }
+        
+        footer {
+            margin-top: 30px;
+            color: white;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--accent);
+            text-shadow: 2px 2px 0 var(--dark);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .game-modes {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">Tic Tac Toe Pro</div>
+    <div class="container">
+        <h1>TIC TAC TOE PRO</h1>
+        <p class="tagline">The Ultimate Tic Tac Toe Experience!</p>
+        
+        <div class="game-modes">
+            <div class="mode-card player-vs-player" onclick="location.href='game.html?mode=pvp'">
+                <h3>Player vs Player</h3>
+                <p>Challenge a friend on the same device in classic head-to-head mode</p>
+            </div>
+            
+            <div class="mode-card player-vs-ai" onclick="location.href='game.html?mode=ai'">
+                <h3>Player vs AI</h3>
+                <p>Test your skills against our intelligent computer opponent</p>
+            </div>
+            
+            <div class="mode-card online-multiplayer" onclick="location.href='game.html?mode=online'">
+                <h3>Online Multiplayer</h3>
+                <p>Play against friends or random opponents from around the world</p>
+            </div>
+        </div>
+        
+        <button class="play-button" onclick="location.href='game.html?mode=pvp'">PLAY NOW</button>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🎮 Multiple Difficulties</h3>
+                <p>From beginner to expert, we have AI levels for all skill levels</p>
+            </div>
+            <div class="feature">
+                <h3>🏆 Leaderboards</h3>
+                <p>Compete for the top spot in our global rankings</p>
+            </div>
+            <div class="feature">
+                <h3>✨ Customizable</h3>
+                <p>Choose your favorite themes, icons, and board styles</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Tic Tac Toe Pro | <a href="about.html">About</a> | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+</body>
+</html>
